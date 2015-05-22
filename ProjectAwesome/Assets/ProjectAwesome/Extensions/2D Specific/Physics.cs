@@ -21,7 +21,7 @@ public static partial class ProjectAwesome
 {
 
 	//Sets an object's velocity to zero.
-	public static void ZeroVelocity(this GameObject gameObj)
+	public static void StopMotion(this GameObject gameObj)
 	{
 		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
 		if(ourRigidbody != null)
@@ -82,7 +82,7 @@ public static partial class ProjectAwesome
 	}
 	
 	//Toggles the sleep mode of an object's Rigidbody2D
-	public static void TogglePhysics2D(this GameObject gameObj)
+	public static void TogglePhysics(this GameObject gameObj)
 	{
 		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
 		if(ourRigidbody != null)
@@ -103,7 +103,7 @@ public static partial class ProjectAwesome
 	}
 	
 	//Puts the object's Rigidbody2D to sleep
-	public static void DisablePhysics2D(this GameObject gameObj)
+	public static void DisablePhysics(this GameObject gameObj)
 	{
 		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
 		if(ourRigidbody != null)
@@ -118,7 +118,7 @@ public static partial class ProjectAwesome
 	}
 	
 	//Wakes up an object's Rigidbody2D
-	public static void EnablePhysics2D(this GameObject gameObj)
+	public static void EnablePhysics(this GameObject gameObj)
 	{
 		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
 		if(ourRigidbody != null)
