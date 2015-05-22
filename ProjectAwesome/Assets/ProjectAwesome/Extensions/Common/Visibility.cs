@@ -2,8 +2,9 @@
 using System.Collections;
 
 /// <summary>
-/// Project awesome is spread across multiple files, this part of the class
-/// allows users to manipulate Renderer visibility without GetComponent
+/// * 	The ProjectAwesome class is spread across multiple files
+/// * 	This part provides GameObject extensions that allow the user to 
+///		manipulate renderer visibility without using GetComponent
 /// </summary>
 
 //Author : Sam Legus

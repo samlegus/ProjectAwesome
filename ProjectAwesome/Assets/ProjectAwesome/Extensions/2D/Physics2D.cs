@@ -2,9 +2,9 @@
 using System.Collections;
 
 /// <summary>
-/// Project awesome is spread across multiple files, this part of the class will allow direct
-/// Rigidbody2D manipulation without the need for GetComponent calls or Vector3 use.
-/// Warning messages are output to the console if a Rigidbody2D is not present.
+/// * 	The ProjectAwesome class is spread across multiple files
+/// * 	This part provides simple physics manipulation without GetComponent calls
+///		or the need to mess with Vector2s
 /// </summary>
 
 //Author : Sam Legus

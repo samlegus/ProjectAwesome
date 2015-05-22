@@ -2,10 +2,9 @@
 using System.Collections;
 
 /// <summary>
-/// Project awesome is spread across multiple files, this part of the class
-/// will simplify movement by abstracting the need to access a gameObject's transform component
-/// or the xyz values of the position vector away from the user. It also takes care
-/// of the need for deltaTime multiplication when doing translations.
+/// * 	The ProjectAwesome class is spread across multiple files
+/// * 	This part provides GameObject extensions that allow (non-physics driven) movement
+///		without the use of GetComponent or Vector2s (overloads for Vector2s are provided in some cases)
 /// </summary>
 
 //Author : Sam Legus

@@ -2,10 +2,11 @@
 using System.Collections;
 
 /// <summary>
-/// Project awesome is spread across multiple files, this part of the class allows
-/// for fake "rotations" by inverting the x and y values of an objects scale.
-/// For "real" rotations , see Rotation.cs.
-/// Do not use real and fake rotations together.
+/// * 	The ProjectAwesome class is spread across multiple files
+/// * 	This part allows the user to do simple, 90 or 180 degree "rotations"
+///		by inverting the x and y values of an object's scale
+/// * 	The methods in this file are not compatible with actual rotation methods and should
+///		be used only during earlier learning stages.
 /// </summary>
 
 //Author : Sam Legus
