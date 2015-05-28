@@ -7,7 +7,7 @@ using System;
 /// <summary>
 ///	* This adds "New Awesome Script" to the project window context (right click) menu
 /// * Could probably use some more testing and commenting, but for now it's functional
-/// * This required that all the ProjectAwesome stuff is in the right place
+/// * This requires that all the ProjectAwesome stuff is in the right place
 /// </summary>
 public class AwesomeScriptCreationWindow : EditorWindow
 {
@@ -17,13 +17,14 @@ public class AwesomeScriptCreationWindow : EditorWindow
 	private static void CreateNewAwesomeScript()
 	{
 		var window = EditorWindow.GetWindow<AwesomeScriptCreationWindow>();
-		window.position = new Rect(Screen.width / 2,Screen.height / 2, 450, 150);
+		window.position = new Rect(Screen.width / 2,Screen.height / 2, 450, 80);
 		window.ShowPopup ();
 	}
 	
 	void OnGUI()
 	{
-		GUILayout.Label ("Name should have letters only. No spaces, numbers or symbols.");
+		GUILayout.Label ("* Name should have LETTERS ONLY. No spaces, numbers or symbols.");
+		GUILayout.Label ("* It is recommended to camel case your script name, ex : playerHealth ");
 		scriptName = EditorGUILayout.TextField ("Script name:", scriptName);
 		
 		if(GUILayout.Button ("Create"))			

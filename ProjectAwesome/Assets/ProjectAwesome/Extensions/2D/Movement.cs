@@ -8,7 +8,7 @@ using System.Collections;
 /// </summary>
 
 //Author : Sam Legus
-//Last Updated: 5/21/2015
+//Last Updated: 5/28/2015
 
 //Vector2 class Documentation : http://docs.unity3d.com/ScriptReference/30_search.html?q=Vector2
 //GameObject class Documentation: http://docs.unity3d.com/ScriptReference/GameObject.html
@@ -56,6 +56,9 @@ public static partial class ProjectAwesome
 		gameObj.transform.position = newPosition;
 	}
 	
+	/*
+	
+	//Finish later
 	//Smooth movement function
 	public static void MoveOverTime(this GameObject gameObj, float x, float y, float seconds)
 	{
@@ -65,6 +68,9 @@ public static partial class ProjectAwesome
 		
 		gameObj.transform.position = nextPosition;
 	}
+	
+	*/
+
 	
 	public static void SetPosition(this GameObject gameObj, float x, float y)
 	{
