@@ -33,7 +33,7 @@ public class MovementExample : MonoBehaviour
 		
 		if(Input.GetMouseButton(0))
 		{
-			gameObject.DisablePhysics2D ();
+			gameObject.DisablePhysics ();
 		}
 		if(Input.GetMouseButtonDown(1))
 		{
@@ -41,7 +41,7 @@ public class MovementExample : MonoBehaviour
 		}
 		if(Input.GetMouseButtonDown (2))
 		{
-			gameObject.EnablePhysics2D ();
+			gameObject.EnablePhysics ();
 		}
 		
 		//Debug.Log(GetComponent<Rigidbody2D>().velocity);
