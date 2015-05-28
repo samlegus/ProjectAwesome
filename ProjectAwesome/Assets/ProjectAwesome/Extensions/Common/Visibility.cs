@@ -8,10 +8,11 @@ using System.Collections;
 /// </summary>
 
 //Author : Sam Legus
-//Last Updated: 5/21/2015
+//Last Updated: 5/28/2015
 
 //Vector2 class Documentation : http://docs.unity3d.com/ScriptReference/30_search.html?q=Vector2
 //GameObject class Documentation: http://docs.unity3d.com/ScriptReference/GameObject.html
+//Renderer class Documentation: http://docs.unity3d.com/ScriptReference/Renderer.html
 //Unity Extension Methods Tutorial: https://unity3d.com/learn/tutorials/modules/intermediate/scripting/extension-methods
 
 
@@ -54,6 +55,27 @@ public static partial class ProjectAwesome
 		else
 		{
 			Debug.Log (gameObj.name + " has no renderer component! Cannot disable visibility");
+		}
+	}
+	
+	public static bool IsVisibleOnScreen(this GameObject gameObj)
+	{
+		Renderer ourRenderer = gameObj.GetComponent<Renderer>();
+		if(ourRenderer != null)
+		{
+			if(ourRenderer.isVisible)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{	
+			return false;
+			Debug.Log (gameObj.name + " has no renderer component! Cannot obtain visibility status");
 		}
 	}
 }
