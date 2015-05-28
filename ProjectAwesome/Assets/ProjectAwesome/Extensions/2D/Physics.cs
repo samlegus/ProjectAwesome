@@ -234,5 +234,33 @@ public static partial class ProjectAwesome
 			Debug.Log (gameObj.name + " has no Rigidbody2D component! Cannot enable physics.");
 		}
 	}
+
+	public static float GetColliderWidth(this GameObject gameObj)
+	{	
+		Collider2D ourCollider = gameObj.GetComponent<Collider2D>();
+		if(ourCollider != null)
+		{
+			return ourCollider.bounds.size.x;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Collider2D component! Cannot obtain collider width.");
+			return 0f;
+		}
+	}
+	
+	public static float GetColliderHeight(this GameObject gameObj)
+	{	
+		Collider2D ourCollider = gameObj.GetComponent<Collider2D>();
+		if(ourCollider != null)
+		{
+			return ourCollider.bounds.size.y;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Collider2D component! Cannot obtain collider height.");
+			return 0f;
+		}
+	}
 	
 }
