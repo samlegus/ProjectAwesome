@@ -10,7 +10,7 @@ using System.Collections;
 /// </summary>
 
 //Author : Sam Legus
-//Last Updated: 5/21/2015
+//Last Updated: 5/28/2015
 
 //Vector2 class Documentation : http://docs.unity3d.com/ScriptReference/30_search.html?q=Vector2
 //GameObject class Documentation: http://docs.unity3d.com/ScriptReference/GameObject.html
@@ -41,6 +41,20 @@ public static partial class ProjectAwesome
 		if(ourRigidbody != null)
 		{
 			Vector2 newVelocity = new Vector2(x,y);
+			ourRigidbody.velocity = newVelocity;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
+		}
+	}
+	
+	//Sets an object's velocity using a Vector2
+	public static void SetVelocity(this GameObject gameObj, Vector2 newVelocity)
+	{
+		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
+		if(ourRigidbody != null)
+		{
 			ourRigidbody.velocity = newVelocity;
 		}
 		else
@@ -80,6 +94,96 @@ public static partial class ProjectAwesome
 			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
 		}
 	}
+	
+	public static float GetDirectionX(this GameObject gameObj)
+	{
+		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
+		if(ourRigidbody != null)
+		{
+			return ourRigidbody.velocity.normalized.x;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
+			return 0f;
+		}
+	}
+	
+	public static float GetDirectionY(this GameObject gameObj)
+	{
+		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
+		if(ourRigidbody != null)
+		{
+			return ourRigidbody.velocity.normalized.y;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
+			return 0f;
+		}
+	}
+	
+	public static Vector2 GetDirection(this GameObject gameObj)
+	{
+		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
+		if(ourRigidbody != null)
+		{
+			return ourRigidbody.velocity.normalized;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
+			return Vector2.zero;
+		}
+	}
+	/*
+	//Returns the x velocity of an object
+	public static float GetVelocityX(this GameObject gameObj)
+	{
+		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
+		if(ourRigidbody != null)
+		{
+			return ourRigidbody.velocity.x;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
+			return 0f;
+		}
+	}
+	
+	//Returns the the y velocity of an object
+	public static float GetVelocityY(this GameObject gameObj)
+	{
+		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
+		if(ourRigidbody != null)
+		{
+			return ourRigidbody.velocity.y;
+		}
+		else
+		{
+			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
+			return 0f;
+		}
+	}
+	/*
+	
+	//Returns the velocity of an object
+	public static float GetVelocity(this GameObject gameObj)
+	{
+		Rigidbody2D ourRigidbody = gameObj.GetComponent<Rigidbody2D>();
+		if(ourRigidbody != null)
+		{
+			return ourRigidbody.velocity;
+		}
+		else
+		{
+			return Vector2.zero;
+			Debug.Log (gameObj.name + " has no Rigidbody2D component! Velocity not accessible.");
+		}
+	}
+	*/
+	
 	
 	//Toggles the sleep mode of an object's Rigidbody2D
 	public static void TogglePhysics(this GameObject gameObj)
